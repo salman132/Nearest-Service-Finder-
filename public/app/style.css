@@ -1,0 +1,125 @@
+body{
+	margin:0;
+}
+.banner-content{
+	background-image: url('images/banner.jpeg');
+	background-size: cover;
+	min-height: 550px;
+	overflow: hidden;
+}
+.menu-area{
+	width: 100%;
+	background-color:#ffffff;
+	border-bottom: 1px solid #ecf0f1;
+	overflow: hidden;
+}
+.menu-area ul li,
+.menu-area ul li a
+{
+	padding: 10px 5px;
+	color:#000000;
+	font-size: 17px;
+	text-transform: capitalize;
+}
+.mynav ul.nav{
+	float:right !important;
+}
+.menu-area ul li a:hover{
+	color:#FF5A5F !important;
+	transition: 1s;
+}
+.menu-area .logo-area a img{
+	width: 120px;
+	height: auto;
+}
+/*... contact us ..*/
+.contact-us .banner-area{
+	width: 100%;
+	background-image: url('images/contact.jpg');
+	background-size: 100% 100%;
+	padding: 40px 0;
+	overflow: hidden;
+}
+.contact-us .banner-area .text-area{
+	margin-top:20%;
+}
+
+ /*middle area..........*/
+ .contact-us{
+	width:100%;
+	background-color: #fafafa;
+	padding: 10px 0;
+	overflow: hidden;
+
+ }
+
+ /*.... host area ...*/
+ .host-area{
+ 	width:100%;
+ 	background-color: #FFFFFF;
+ 	padding: 30px 0;
+ 	overflow: hidden;
+ }
+ .host-area .host-image{
+ 	width: 100%;
+ 	
+ 	
+ 	overflow: hidden;
+
+ }
+ .host-area .random h2{
+ 	color:#000000;
+ 	font-size: 30px;
+ 	padding: 20px 0;
+ }
+ .result-sm h3 i,
+ .result-sm p i,
+ .result-sm h6 i{
+ 	font-size: 27px;
+ 	padding: 0 5px;
+ 	color:#27ae60;
+ }
+ .shortline hr{
+ 	border: 3px dotted #000000;
+ }
+ .portal-icon i{
+ 	font-size: 59px;
+ 	padding: 5px 5px;
+ 	color:#16a085;
+ }
+ .form-area .fraud-image img{
+ 	width:200px;
+ 	height: 200px;
+
+ }
+  .form-area .fraud-text{
+  	margin-top: 15px;
+  }
+ .form-area .fraud-text span{
+ 	padding: 3px 1px;
+ 	border-bottom: 1px solid #c0392b;
+ 	font-weight: bold;
+ 	text-transform: capitalize;
+ }
+ .road-to-home {
+ 	margin-top: 300px;
+ }
+ .road-to-home p{
+ 	font-weight: bold;
+ 	letter-spacing: 1px;
+ 	text-transform: capitalize;
+ 	font-size: 29px;
+ 	color:#2ecc71;
+
+ }
+
+ .footer-area{
+ 	background-color: #000000;
+ 	padding: 20px 0;
+ 	overflow: hidden;
+ }
+ .footer-area  p{
+ 	color: #FFFFFF;
+ 	font-size: 17px;
+ 	letter-spacing: 1px;
+ }
