@@ -15,6 +15,8 @@ class UsersTableSeeder extends Seeder
             'id' => 1,
             'name'=> 'Salman Rahman Auvi',
             'email'=> 'salman.auvi@gmail.com',
+            'admin'=> '1',
+            'completed'=>1,
             'password'=> bcrypt(123456789)
         ]);
     }

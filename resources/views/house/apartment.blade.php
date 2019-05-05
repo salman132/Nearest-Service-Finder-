@@ -62,6 +62,10 @@
                                                         @endforeach
                                                 </select>
                                             </div>
+                                            <div class="form-group">
+                                                <label>Distance From Police Station</label>
+                                                <input type="number" name="distance" class="form-control" placeholder="Distance From Police Station">
+                                            </div>
 
                                             <div class="form-group">
                                                 <label>Upload An image of the Appartment <span class="text-danger"> *</span></label>

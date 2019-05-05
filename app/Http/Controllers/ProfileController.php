@@ -7,6 +7,7 @@ use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
+use Session;
 
 class ProfileController extends Controller
 {
@@ -101,9 +102,10 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        return view('profile.update')->with('user',Auth::user());
+
     }
 
     /**
@@ -115,7 +117,33 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'phone' => 'required|regex:/(01)[0-9]{9}/',
+
+        ]);
+
+        $profile = Profile::find($id);
+        $profile->phone = $request->phone;
+
+        if($request->hasFile('image')){
+            if(file_exists('/uploads/profile/'.$profile->image)){
+
+                @unlink('/uploads/profile/'.$profile->image);
+            }
+            $image = $request->image;
+            $image_new_name = time().$image->getClientOriginalName();
+            $image->move('uploads/profile',$image_new_name);
+
+            $profile->image = $image_new_name;
+        }
+
+        $profile->save();
+
+        Session::flash('success','You Successfully Updated Your Profile');
+
+        return redirect()->back();
+
+
     }
 
     /**

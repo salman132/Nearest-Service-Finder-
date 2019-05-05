@@ -32,6 +32,10 @@ body{
 	width: 120px;
 	height: auto;
 }
+.menu-area .logo-area a img:hover{
+	transform: rotate(360deg);
+	transition: 2s;
+}
 /*... contact us ..*/
 .contact-us .banner-area{
 	width: 100%;

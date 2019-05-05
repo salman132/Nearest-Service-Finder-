@@ -30,7 +30,8 @@ class FrontendController extends Controller
         $thana = Thana::where('district_id',$request->district)->get();
         return view('search')
             ->with('district',$dis)
-            ->with('thanas',$thana);
+            ->with('thanas',$thana)
+            ->with('apartments',Apartment::where('district_id',$request->district)->get());
 
     }
 
@@ -53,13 +54,15 @@ class FrontendController extends Controller
      */
     public function show(Request $request, $id)
     {
-        $apartment = Apartment::where('thana_id',$request->thana)->get();
+        $apartment = Apartment::where('thana_id',$request->thana)
+            ->where('distance',$request->distance)->get();
+
         $thana = Thana::find($request->thana);
 
+
         return view('result')
-            ->with('apartments',$apartment)
-            ->with('thana',$thana)
-            ->with('district',District::find($id));
+            ->with('thanas',$thana)
+            ->with('apartments',$apartment);
     }
 
     /**

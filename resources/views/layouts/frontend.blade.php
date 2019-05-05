@@ -113,6 +113,12 @@
     @if(Session::has('success'))
     toastr.success('{{Session::get('success')}} ')
     @endif
+    @if(Session::has('danger'))
+
+    toastr.warning('{{Session::get('danger')}}')
+
+
+    @endif
 </script>
 
 <!-- ... boostrap js ... -->

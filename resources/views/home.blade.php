@@ -31,7 +31,7 @@
                             <div class="portal-icon">
                                 <i class="fas fa-user-tie"></i>
                                 <h4>Update Your Profile</h4>
-                                <a href="#" class="btn btn-primary">View Details</a>
+                                <a href="{{route('profile.edit')}}" class="btn btn-primary">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -62,7 +62,11 @@
                                 <i class="fas fa-sort-amount-up"></i>
 
                                 <h4>Check Current Status</h4>
-                                <a href="#" class="btn btn-primary">View Details</a>
+                                @if(Auth::user()->profile->role_id ==2)
+                                <a href="{{route('order.page')}}" class="btn btn-primary">View Details</a>
+                                    @else
+                                    <a href="{{route('user.order')}}" class="btn btn-primary">View Details</a>
+                                @endif
                             </div>
                         </div>
                     </div>

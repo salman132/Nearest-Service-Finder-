@@ -44,4 +44,7 @@ class User extends Authenticatable
     public function apartment(){
         return $this->hasMany('App\Apartment');
     }
+    public function order(){
+        return $this->hasMany('App\Order');
+    }
 }

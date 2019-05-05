@@ -25,11 +25,16 @@ class ApartmentsController extends Controller
             $ap = Apartment::where('user_id',Auth::id())->first();
 
 
+
+
             if($ap == NULL) {
                 return view('house/district')->with('districts', District::all());
             }
             else{
-                return "hi";
+
+
+                return view('hosts/apartment')->with('apartment',$ap);
+
             }
         }
         else{
@@ -71,13 +76,15 @@ class ApartmentsController extends Controller
 
         $request->validate([
             'district'=>'required|integer',
-            'house'=> 'required|integer',
-            'road'=> 'required|integer',
+            'house'=> 'required|max:90',
+            'road'=> 'required|max:80',
             'thana'=> 'required|integer',
-            'flat'=> 'required|integer',
+            'flat'=> 'required|max:50',
             'image'=> 'required|image',
+            'distance'=> 'required|max:30'
 
         ]);
+
 
         $apartment = new Apartment();
 
@@ -87,6 +94,7 @@ class ApartmentsController extends Controller
         $apartment->road_no = $request->road;
         $apartment->thana_id = $request->thana;
         $apartment->flat_no = $request->flat;
+        $apartment->distance = $request->distance;
 
         $image= $request->image;
         $image_new_name = time().$image->getClientOriginalName();
@@ -144,6 +152,9 @@ class ApartmentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Apartment::destroy($id);
+
+        Session::flash('success','You Deleted An Apartment');
+        return redirect()->back();
     }
 }
